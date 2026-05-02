@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ba65b4dd743d9a74fac2bee67bbdca9e
+guid: 9e0ea6bd1815ee94a8f1b82f6463ca42
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,15 +97,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: adventurer-idle-00
+      name: heartfull_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 50
-        height: 37
+        width: 250
+        height: 250
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -122,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 93767c4876140e94383cd4737b56e491
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -132,7 +132,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      adventurer-idle-00: -1405248992579124946
+      heartfull_0: -1405248992579124946
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
