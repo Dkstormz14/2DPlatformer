@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-      rb.linearVelocity = new Vector2(moveInput.x * walkSpeed * Time.fixedDeltaTime,rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(moveInput.x * walkSpeed, rb.linearVelocity.y);
     }
 
    public void OnMove(InputAction.CallbackContext context)
