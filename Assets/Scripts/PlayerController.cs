@@ -6,16 +6,46 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
-    public float walkSpeed = 5f;
+    public float walkSpeed = 10f;
     Vector2 moveInput;
 
-    public bool isMoving { get; private set; }
+    [SerializeField]
+    private bool _isMoving = false;
+
+    public bool IsMoving { get
+        {
+            return _isMoving;
+        }
+        private set
+        {
+            _isMoving = value;
+            animator.SetBool("isMoving", value);
+        }
+    }
+
+    [SerializeField]
+    private bool _isRunning = false;
+
+    public bool IsRunning
+    {
+        get
+        {
+            return _isRunning;
+        }
+        set
+        {
+            _isRunning = value;
+            animator.SetBool("isRunning", value);
+        }
+    }
 
     Rigidbody2D rb;
+    Animator animator;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }   
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -32,13 +62,25 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(moveInput.x * walkSpeed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(moveInput.x * walkSpeed * Time.fixedDeltaTime, rb.linearVelocity.y);
     }
 
    public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
 
-        isMoving = moveInput != Vector2.zero;
+        IsMoving = moveInput != Vector2.zero;
+    }
+
+    public void OnRun(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            IsRunning = true;
+        }
+        else if (context.canceled)
+        {
+            IsRunning = false;
+        }
     }
 }
