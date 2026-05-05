@@ -6,8 +6,28 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
-    public float walkSpeed = 10f;
+    public float walkSpeed = 5f;
+    public float runSpeed = 8f;
     Vector2 moveInput;
+
+    public float CurrentMoveSpeed {  get
+        {
+            if(IsMoving)
+            {
+                if (IsRunning)
+                {
+                    return runSpeed;
+                } else
+                {
+                    return walkSpeed;
+                }
+            } else
+            {
+                // Not moving, so speed is 0
+                return 0f;
+            }
+        }
+    }
 
     [SerializeField]
     private bool _isMoving = false;
@@ -39,6 +59,25 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public bool _isFacingRight = true;
+
+    public bool IsFacingRight
+    {
+        get { return _isFacingRight; }
+        private set
+        {
+            if (_isFacingRight != value)
+            {
+                // Flip the character's facing direction
+                transform.localScale *= new Vector2(-1, 1);
+            }
+
+            _isFacingRight = value;
+
+
+        }
+    }
+
     Rigidbody2D rb;
     Animator animator;
 
@@ -62,7 +101,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(moveInput.x * walkSpeed * Time.fixedDeltaTime, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.linearVelocity.y);
     }
 
    public void OnMove(InputAction.CallbackContext context)
@@ -70,6 +109,22 @@ public class PlayerController : MonoBehaviour
         moveInput = context.ReadValue<Vector2>();
 
         IsMoving = moveInput != Vector2.zero;
+
+        SetFacingDirection(moveInput);
+    }
+
+    private void SetFacingDirection(Vector2 moveInput)
+    {
+       if (moveInput.x > 0 && !IsFacingRight)
+        {
+            // Moving right and currently facing left, so flip to face right
+            IsFacingRight = true;
+        }
+        else if(moveInput.x < 0 && IsFacingRight)
+        {
+          // Moving left and currently facing right, so flip to face left
+            IsFacingRight = false;
+        }
     }
 
     public void OnRun(InputAction.CallbackContext context)
