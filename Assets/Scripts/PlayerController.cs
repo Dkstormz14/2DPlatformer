@@ -3,27 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections))]
 public class PlayerController : MonoBehaviour
 {
     public float walkSpeed = 5f;
     public float runSpeed = 8f;
+    public float airWalkSpeed = 3f;
+    public float JumpImpulse = 10f;
     Vector2 moveInput;
+    TouchingDirections touchingDirections;
 
-    public float CurrentMoveSpeed {  get
+    public float CurrentMoveSpeed { get
         {
-            if(IsMoving)
+            if (IsMoving && !touchingDirections.IsOnWall)
             {
-                if (IsRunning)
+                if (touchingDirections.IsGrounded)
                 {
-                    return runSpeed;
-                } else
-                {
-                    return walkSpeed;
+                    if (IsRunning)
+                    {
+                        return runSpeed;
+                    }
+                    else
+                    {
+                        return walkSpeed;
+                    }
                 }
-            } else
+                else
+                {
+                    // In the air, so use air walk speed
+                    return airWalkSpeed;
+                }
+            }
+            else
             {
-                // Not moving, so speed is 0
+                // return idle sppeed to 0
                 return 0f;
             }
         }
@@ -85,23 +98,14 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        touchingDirections = GetComponent<TouchingDirections>();
     }   
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void FixedUpdate()
     {
         rb.linearVelocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.linearVelocity.y);
+
+        animator.SetFloat(AnimationStrings.yVelocity, rb.linearVelocity.y);
     }
 
    public void OnMove(InputAction.CallbackContext context)
@@ -136,6 +140,16 @@ public class PlayerController : MonoBehaviour
         else if (context.canceled)
         {
             IsRunning = false;
+        }
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        // Only allow jumping if the player is grounded
+        if (context.started && touchingDirections.IsGrounded)
+        {
+            animator.SetTrigger(AnimationStrings.jump);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, JumpImpulse);
         }
     }
 }

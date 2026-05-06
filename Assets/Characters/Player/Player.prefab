@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7713784326224545397}
   - component: {fileID: 1967760214861220883}
   - component: {fileID: 399995335455191548}
+  - component: {fileID: 1841112803880999301}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -107,7 +108,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -133,6 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 6
   runSpeed: 8
+  JumpImpulse: 10
   _isMoving: 0
   _isRunning: 0
   _isFacingRight: 1
@@ -241,6 +243,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 11fcd59e-1959-42c7-be36-aceed2034dea
     m_ActionName: 'Player/Run[/Keyboard/leftShift]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 585106518577785889}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e1663c3c-e23c-426a-b3d8-4fadd016d2d1
+    m_ActionName: 'Player/Jump[/Keyboard/space,/Keyboard/upArrow]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -305,3 +323,30 @@ CapsuleCollider2D:
   m_Offset: {x: 0.01859725, y: -0.264081}
   m_Size: {x: 0.6180892, y: 1.659536}
   m_Direction: 0
+--- !u!114 &1841112803880999301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2528670027881316922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ce3393dd26a3b543bbca9f70576fd3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  castFIlter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  groundDistance: 0.05
