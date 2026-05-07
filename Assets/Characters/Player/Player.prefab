@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1967760214861220883}
   - component: {fileID: 399995335455191548}
   - component: {fileID: 1841112803880999301}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1405248992579124946, guid: ba65b4dd743d9a74fac2bee67bbdca9e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -350,14 +350,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   castFIlter:
     useTriggers: 0
-    useLayerMask: 0
+    useLayerMask: 1
     useDepth: 0
     useOutsideDepth: 0
     useNormalAngle: 0
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 0
+      m_Bits: 64
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0

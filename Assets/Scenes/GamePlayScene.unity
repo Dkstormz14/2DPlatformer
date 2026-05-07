@@ -5107,7 +5107,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.11500517, y: -0.81122017, z: -10}
+  m_LocalPosition: {x: 0.11500517, y: -0.9212201, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5441,7 +5441,7 @@ Transform:
   m_GameObject: {fileID: 1431455252}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.11500517, y: -0.81122017, z: -10}
+  m_LocalPosition: {x: 0.11500517, y: -0.9212201, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5569,7 +5569,7 @@ GameObject:
   - component: {fileID: 1893658183}
   - component: {fileID: 1893658182}
   - component: {fileID: 1893658188}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12423,6 +12423,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 7, y: -2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 14
+      m_TileSpriteIndex: 14
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 10, y: -2, z: 0}
     second:
       serializedVersion: 2
@@ -13323,7 +13333,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: dabbe658d43700042b064c1b9f37efdf, type: 2}
   - m_RefCount: 238
     m_Data: {fileID: 11400000, guid: 991e7c94d7cef3140a2ea4865d582e2a, type: 2}
-  - m_RefCount: 11
+  - m_RefCount: 12
     m_Data: {fileID: 11400000, guid: 967ef2e8a5d7f0e4ea1e2baf5997b0f4, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 18
@@ -13354,10 +13364,10 @@ Tilemap:
     m_Data: {fileID: 1484599187, guid: e565eead9efd3ae438d9a1e995bd3797, type: 3}
   - m_RefCount: 238
     m_Data: {fileID: 870007351, guid: e565eead9efd3ae438d9a1e995bd3797, type: 3}
-  - m_RefCount: 11
+  - m_RefCount: 12
     m_Data: {fileID: -830069034, guid: e565eead9efd3ae438d9a1e995bd3797, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 755
+  - m_RefCount: 756
     m_Data:
       e00: 1
       e01: 0
@@ -13376,7 +13386,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 755
+  - m_RefCount: 756
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -13554,13 +13564,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2528670027881316922, guid: 1d8a5d6fc2af83f48a47e1a5f2e29cd0, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4353430941665276130, guid: 1d8a5d6fc2af83f48a47e1a5f2e29cd0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4353430941665276130, guid: 1d8a5d6fc2af83f48a47e1a5f2e29cd0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.79
+      value: -0.9
       objectReference: {fileID: 0}
     - target: {fileID: 4353430941665276130, guid: 1d8a5d6fc2af83f48a47e1a5f2e29cd0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13599,6 +13613,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d8a5d6fc2af83f48a47e1a5f2e29cd0, type: 3}
+--- !u!1001 &8805049348132749587
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 903862958363571229, guid: cc4e5163829b6834488970bedb84bcb8, type: 3}
+      propertyPath: castFIlter.layerMask.m_Bits
+      value: 320
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353133428130579726, guid: cc4e5163829b6834488970bedb84bcb8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353133428130579726, guid: cc4e5163829b6834488970bedb84bcb8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353133428130579726, guid: cc4e5163829b6834488970bedb84bcb8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353133428130579726, guid: cc4e5163829b6834488970bedb84bcb8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353133428130579726, guid: cc4e5163829b6834488970bedb84bcb8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353133428130579726, guid: cc4e5163829b6834488970bedb84bcb8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353133428130579726, guid: cc4e5163829b6834488970bedb84bcb8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353133428130579726, guid: cc4e5163829b6834488970bedb84bcb8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353133428130579726, guid: cc4e5163829b6834488970bedb84bcb8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353133428130579726, guid: cc4e5163829b6834488970bedb84bcb8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5550836923781727103, guid: cc4e5163829b6834488970bedb84bcb8, type: 3}
+      propertyPath: m_Name
+      value: KnightEnemy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cc4e5163829b6834488970bedb84bcb8, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -13608,3 +13683,4 @@ SceneRoots:
   - {fileID: 784473033375404263}
   - {fileID: 1431455256}
   - {fileID: 1075034329}
+  - {fileID: 8805049348132749587}
