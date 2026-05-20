@@ -5452,11 +5452,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4353430941665276130, guid: 1d8a5d6fc2af83f48a47e1a5f2e29cd0, type: 3}
   m_PrefabInstance: {fileID: 784473033375404263}
   m_PrefabAsset: {fileID: 0}
---- !u!70 &1555393803 stripped
-CapsuleCollider2D:
-  m_CorrespondingSourceObject: {fileID: 399995335455191548, guid: 1d8a5d6fc2af83f48a47e1a5f2e29cd0, type: 3}
-  m_PrefabInstance: {fileID: 784473033375404263}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1857439083
 GameObject:
   m_ObjectHideFlags: 0
@@ -13569,10 +13564,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2528670027881316922, guid: 1d8a5d6fc2af83f48a47e1a5f2e29cd0, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 4353430941665276130, guid: 1d8a5d6fc2af83f48a47e1a5f2e29cd0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.37
@@ -13626,18 +13617,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1326746402750853344, guid: cc4e5163829b6834488970bedb84bcb8, type: 3}
-      propertyPath: 'detectedColliders.Array.data[0]'
-      value: 
-      objectReference: {fileID: 1555393803}
-    - target: {fileID: 1326746402750853344, guid: cc4e5163829b6834488970bedb84bcb8, type: 3}
-      propertyPath: 'detectedColliders.Array.data[1]'
-      value: 
-      objectReference: {fileID: 1893658183}
-    - target: {fileID: 2781868361600808233, guid: cc4e5163829b6834488970bedb84bcb8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.07
-      objectReference: {fileID: 0}
     - target: {fileID: 4353133428130579726, guid: cc4e5163829b6834488970bedb84bcb8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.533
@@ -13677,10 +13656,6 @@ PrefabInstance:
     - target: {fileID: 4353133428130579726, guid: cc4e5163829b6834488970bedb84bcb8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5191139278020851316, guid: cc4e5163829b6834488970bedb84bcb8, type: 3}
-      propertyPath: walkStopRate
-      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 5550836923781727103, guid: cc4e5163829b6834488970bedb84bcb8, type: 3}
       propertyPath: m_Name
