@@ -7,7 +7,9 @@ using UnityEngine;
 public class Knight : MonoBehaviour
 {
     public float walkSpeed = 3f;
+    public float walkStopRate = 0.05f;
     public DetectionZone attackZone;
+
 
     Rigidbody2D rb;
     TouchingDirections touchingDirections;
@@ -54,6 +56,14 @@ public class Knight : MonoBehaviour
         }
     }
 
+    public bool CanMove
+    {
+        get
+        {
+            return animator.GetBool(AnimationStrings.canMove);
+        }
+    }
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -75,7 +85,10 @@ public class Knight : MonoBehaviour
             FlipDirection();
         }
 
-        rb.linearVelocity = new Vector2(walkSpeed * WalkDirectionVector.x, rb.linearVelocity.y);
+        if (CanMove)
+            rb.linearVelocity = new Vector2(walkSpeed * WalkDirectionVector.x, rb.linearVelocity.y);
+        else
+        rb.linearVelocity = new Vector2(Mathf.Lerp(rb.linearVelocity.x, 0, walkStopRate), rb.linearVelocity.y);
     } 
 
     private void FlipDirection()
