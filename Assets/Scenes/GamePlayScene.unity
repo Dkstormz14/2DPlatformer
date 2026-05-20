@@ -5107,7 +5107,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.11500517, y: -0.9212201, z: -10}
+  m_LocalPosition: {x: 6.485005, y: -0.9212201, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5125,7 +5125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowDebugText: 0
+  ShowDebugText: 1
   ShowCameraFrustum: 1
   IgnoreTimeScale: 0
   WorldUpOverride: {fileID: 0}
@@ -5441,7 +5441,7 @@ Transform:
   m_GameObject: {fileID: 1431455252}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.11500517, y: -0.9212201, z: -10}
+  m_LocalPosition: {x: 6.485005, y: -0.9212201, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5450,6 +5450,11 @@ Transform:
 --- !u!4 &1555393801 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4353430941665276130, guid: 1d8a5d6fc2af83f48a47e1a5f2e29cd0, type: 3}
+  m_PrefabInstance: {fileID: 784473033375404263}
+  m_PrefabAsset: {fileID: 0}
+--- !u!70 &1555393803 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 399995335455191548, guid: 1d8a5d6fc2af83f48a47e1a5f2e29cd0, type: 3}
   m_PrefabInstance: {fileID: 784473033375404263}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1857439083
@@ -13570,7 +13575,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4353430941665276130, guid: 1d8a5d6fc2af83f48a47e1a5f2e29cd0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 6.37
       objectReference: {fileID: 0}
     - target: {fileID: 4353430941665276130, guid: 1d8a5d6fc2af83f48a47e1a5f2e29cd0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13621,17 +13626,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 903862958363571229, guid: cc4e5163829b6834488970bedb84bcb8, type: 3}
-      propertyPath: castFIlter.layerMask.m_Bits
-      value: 320
+    - target: {fileID: 1326746402750853344, guid: cc4e5163829b6834488970bedb84bcb8, type: 3}
+      propertyPath: 'detectedColliders.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1555393803}
+    - target: {fileID: 1326746402750853344, guid: cc4e5163829b6834488970bedb84bcb8, type: 3}
+      propertyPath: 'detectedColliders.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1893658183}
+    - target: {fileID: 2781868361600808233, guid: cc4e5163829b6834488970bedb84bcb8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.07
       objectReference: {fileID: 0}
     - target: {fileID: 4353133428130579726, guid: cc4e5163829b6834488970bedb84bcb8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.72
+      value: -1.533
       objectReference: {fileID: 0}
     - target: {fileID: 4353133428130579726, guid: cc4e5163829b6834488970bedb84bcb8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.82
+      value: -0.84
       objectReference: {fileID: 0}
     - target: {fileID: 4353133428130579726, guid: cc4e5163829b6834488970bedb84bcb8, type: 3}
       propertyPath: m_LocalPosition.z
