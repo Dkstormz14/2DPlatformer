@@ -14,6 +14,8 @@ public class Attack : MonoBehaviour
 
         if (damageable != null)
         {
+            Vector2 deliveredKnockback = transform.parent.localScale.x > 0 ? knockback : new Vector2(-knockback.x * -1, knockback.y);
+
             // Hit the target
             bool gotHit = damageable.Hit(attackDamage, knockback);
 
