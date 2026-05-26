@@ -239,7 +239,7 @@ MonoBehaviour:
   runSpeed: 8
   airWalkSpeed: 3
   JumpImpulse: 10
-  _isMoving: 0
+  _isMoving: 1
   _isRunning: 0
   _isFacingRight: 1
 --- !u!114 &7713784326224545397
