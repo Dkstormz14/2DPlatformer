@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 10
-  knockback: {x: 3, y: 0}
+  knockback: {x: 1, y: 0}
 --- !u!1 &2528670027881316922
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +241,7 @@ MonoBehaviour:
   runSpeed: 8
   airWalkSpeed: 3
   JumpImpulse: 10
-  _isMoving: 1
+  _isMoving: 0
   _isRunning: 0
   _isFacingRight: 1
 --- !u!114 &7713784326224545397
@@ -584,13 +584,16 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.090973854, y: 1.0846393}
-      - {x: -0.9365497, y: 1.0801872}
-      - {x: -0.25444603, y: 0.15028924}
-      - {x: -0.76634926, y: -0.788108}
-      - {x: -0.06716859, y: -0.7964629}
-      - {x: 0.42132282, y: -0.27118814}
-      - {x: 0.43279362, y: 0.5851183}
+    - - {x: -0.36282635, y: 0.16336238}
+      - {x: -0.4381538, y: 0.028018415}
+      - {x: 0.05066538, y: -0.21474719}
+      - {x: 0.06855488, y: -0.41074193}
+      - {x: -0.44071484, y: -0.640096}
+      - {x: -1.2382755, y: -0.71240115}
+      - {x: -1.239574, y: -0.9794115}
+      - {x: -0.11751115, y: -0.9122517}
+      - {x: 0.5522146, y: -0.51786876}
+      - {x: 0.48313665, y: -0.22540414}
   m_UseDelaunayMesh: 0
 --- !u!114 &6915528035324952538
 MonoBehaviour:
@@ -646,7 +649,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8255964087716578684}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -709,4 +712,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 15
-  knockback: {x: 3, y: 0}
+  knockback: {x: 1, y: 0}
