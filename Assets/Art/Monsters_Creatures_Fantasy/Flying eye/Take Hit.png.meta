@@ -97,23 +97,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: heartfull_0
+      name: Take Hit_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 250
-        height: 250
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e2188509c7d8f7ce0800000000000000
-      internalID: -1405248992579124946
+      spriteID: b98af590e8b52f64a8648fae25ca10b4
+      internalID: -546668679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Take Hit_1
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 0
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 658bc60820a352e4d8f95d812b9f0dd3
+      internalID: -1026529121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Take Hit_2
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54bbe6dfff6b0f3438ed0071a8f76a18
+      internalID: -148179925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Take Hit_3
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 0
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e98f955ce33ced4391ac1805206f30e
+      internalID: -644708841
       vertices: []
       indices: 
       edges: []
@@ -122,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ec0ec6d29ce0a3b4891649fce38d5e40
     internalID: 0
     vertices: []
     indices: 
@@ -132,7 +198,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      heartfull_0: -1405248992579124946
+      Take Hit_0: -546668679
+      Take Hit_1: -1026529121
+      Take Hit_2: -148179925
+      Take Hit_3: -644708841
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
