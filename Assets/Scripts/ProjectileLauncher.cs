@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ProjectileLauncher : MonoBehaviour
@@ -15,7 +13,7 @@ public class ProjectileLauncher : MonoBehaviour
         // Flip the projectile's scale based on the launcher's facing direction
         projectile.transform.localScale = new Vector3(
             origScale.x * transform.localScale.x > 0 ? 1 : -1,
-            origScale.y, 
+            origScale.y,
             origScale.z
         );
     }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -54,7 +52,7 @@ public class UIManager : MonoBehaviour
     {
         if (context.started)
         {
-           #if (UNITY_EDITOR || DEVELOPMENT_BUILD)
+#if (UNITY_EDITOR || DEVELOPMENT_BUILD)
             UnityEditor.EditorApplication.isPlaying = false;
 #elif (UNITY_STANDALONE)
               Application.Quit();

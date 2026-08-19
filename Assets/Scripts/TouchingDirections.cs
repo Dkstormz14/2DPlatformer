@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 // use the collider of the player to check which directions the player is touching (ground, wall, ceiling)
@@ -20,10 +18,14 @@ public class TouchingDirections : MonoBehaviour
     [SerializeField]
     private bool _isGrounded;
 
-    public bool IsGrounded { get
+    public bool IsGrounded
+    {
+        get
         {
             return _isGrounded;
-        } private set {
+        }
+        private set
+        {
             _isGrounded = value;
             animator.SetBool(AnimationStrings.isGrounded, value);
         }
@@ -32,9 +34,9 @@ public class TouchingDirections : MonoBehaviour
     [SerializeField]
     private bool _isOnWall;
 
-    public bool IsOnWall 
-    {  
-        get 
+    public bool IsOnWall
+    {
+        get
         {
             return _isOnWall;
         }

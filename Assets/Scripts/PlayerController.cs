@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,7 +12,9 @@ public class PlayerController : MonoBehaviour
     TouchingDirections touchingDirections;
     Damageable damageable;
 
-    public float CurrentMoveSpeed { get
+    public float CurrentMoveSpeed
+    {
+        get
         {
             if (CanMove)
             {
@@ -53,7 +53,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private bool _isMoving = false;
 
-    public bool IsMoving { get
+    public bool IsMoving
+    {
+        get
         {
             return _isMoving;
         }
@@ -99,7 +101,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public bool CanMove {  get
+    public bool CanMove
+    {
+        get
         {
             return animator.GetBool(AnimationStrings.canMove);
         }
@@ -122,7 +126,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         touchingDirections = GetComponent<TouchingDirections>();
         damageable = GetComponent<Damageable>();
-    }   
+    }
 
     private void FixedUpdate()
     {
@@ -134,7 +138,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat(AnimationStrings.yVelocity, rb.linearVelocity.y);
     }
 
-   public void OnMove(InputAction.CallbackContext context)
+    public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
 
@@ -143,24 +147,24 @@ public class PlayerController : MonoBehaviour
             IsMoving = moveInput != Vector2.zero;
 
             SetFacingDirection(moveInput);
-        } 
-        else
-        { 
-          IsMoving = false;
         }
-     
+        else
+        {
+            IsMoving = false;
+        }
+
     }
 
     private void SetFacingDirection(Vector2 moveInput)
     {
-       if (moveInput.x > 0 && !IsFacingRight)
+        if (moveInput.x > 0 && !IsFacingRight)
         {
             // Moving right and currently facing left, so flip to face right
             IsFacingRight = true;
         }
-        else if(moveInput.x < 0 && IsFacingRight)
+        else if (moveInput.x < 0 && IsFacingRight)
         {
-          // Moving left and currently facing right, so flip to face left
+            // Moving left and currently facing right, so flip to face left
             IsFacingRight = false;
         }
     }

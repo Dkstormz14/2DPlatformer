@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damageable))]
@@ -25,7 +22,8 @@ public class Knight : MonoBehaviour
     public WalkableDirection WalkDirection
     {
         get { return _walkDirection; }
-        set {
+        set
+        {
             if (_walkDirection != value)
             {
                 // Direction has changed, flip the sprite
@@ -34,20 +32,22 @@ public class Knight : MonoBehaviour
                 if (value == WalkableDirection.Right)
                 {
                     WalkDirectionVector = Vector2.right;
-                } else if (value == WalkableDirection.Left)
+                }
+                else if (value == WalkableDirection.Left)
                 {
                     WalkDirectionVector = Vector2.left;
                 }
             }
-            
-            _walkDirection = value; }
+
+            _walkDirection = value;
+        }
     }
 
     public bool _hasTarget = false;
 
     public bool HasTarget
     {
-        get 
+        get
         {
             return _hasTarget;
         }
@@ -66,7 +66,9 @@ public class Knight : MonoBehaviour
         }
     }
 
-    public float AttackCooldown { get
+    public float AttackCooldown
+    {
+        get
         {
             return animator.GetFloat(AnimationStrings.attackCooldown);
         }
@@ -87,9 +89,10 @@ public class Knight : MonoBehaviour
     // Update is called once per fram e
     void Update()
     {
-         HasTarget = attackZone.detectedColliders.Count > 0;
+        HasTarget = attackZone.detectedColliders.Count > 0;
 
-        if (AttackCooldown > 0) {
+        if (AttackCooldown > 0)
+        {
             AttackCooldown -= Time.deltaTime;
         }
     }
@@ -102,27 +105,29 @@ public class Knight : MonoBehaviour
             FlipDirection();
         }
 
-        if(!damageable.LockVelocity)
+        if (!damageable.LockVelocity)
         {
             if (CanMove && touchingDirections.IsGrounded)
                 // Accelerate to max speed in the current walk direction
-            rb.linearVelocity = new Vector2(
-                Mathf.Clamp(rb.linearVelocity.x + (walkAcceleration * WalkDirectionVector.x * Time.fixedDeltaTime), -maxSpeed, maxSpeed),
-                rb.linearVelocity.y);
+                rb.linearVelocity = new Vector2(
+                    Mathf.Clamp(rb.linearVelocity.x + (walkAcceleration * WalkDirectionVector.x * Time.fixedDeltaTime), -maxSpeed, maxSpeed),
+                    rb.linearVelocity.y);
             else
                 rb.linearVelocity = new Vector2(Mathf.Lerp(rb.linearVelocity.x, 0, walkStopRate), rb.linearVelocity.y);
         }
-    } 
+    }
 
     private void FlipDirection()
     {
         if (WalkDirection == WalkableDirection.Right)
         {
             WalkDirection = WalkableDirection.Left;
-        } else if (WalkDirection == WalkableDirection.Left)
+        }
+        else if (WalkDirection == WalkableDirection.Left)
         {
             WalkDirection = WalkableDirection.Right;
-        } else
+        }
+        else
         {
             Debug.LogError("Current walkabale direction is ot set to legal values of right or left");
         }

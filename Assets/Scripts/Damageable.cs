@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -55,7 +53,8 @@ public class Damageable : MonoBehaviour
     private float timeSinceHit = 0;
     public float invincibilityTime = 0.25f;
 
-    public bool IsAlive {
+    public bool IsAlive
+    {
         get
         {
             return _isAlive;
@@ -96,7 +95,7 @@ public class Damageable : MonoBehaviour
     {
         if (isInvincible)
         {
-            if(timeSinceHit > invincibilityTime)
+            if (timeSinceHit > invincibilityTime)
             {
                 // Remove invincibility
                 isInvincible = false;
@@ -141,5 +140,5 @@ public class Damageable : MonoBehaviour
         }
 
         return false;
-        }
     }
+}

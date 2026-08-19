@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -35,7 +33,7 @@ public class Projectile : MonoBehaviour
             bool gotHit = damageable.Hit(damage, knockback);
 
             if (gotHit)
-            Debug.Log(collision.name + " hit for " + damage);
+                Debug.Log(collision.name + " hit for " + damage);
             Destroy(gameObject);
         }
     }

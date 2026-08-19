@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -32,7 +29,8 @@ public class HealthText : MonoBehaviour
         {
             float fadeAlpha = startColor.a * (1 - (timeElasped / timeToFade));
             textMeshPro.color = new Color(startColor.r, startColor.g, startColor.b, fadeAlpha);
-        } else
+        }
+        else
         {
             Destroy(gameObject);
         }

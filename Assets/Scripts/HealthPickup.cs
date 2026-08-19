@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HealthPickup : MonoBehaviour
@@ -10,24 +8,24 @@ public class HealthPickup : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       Damageable damageable = collision.GetComponent<Damageable>();
+        Damageable damageable = collision.GetComponent<Damageable>();
 
         if (damageable)
-            {
+        {
             bool wasHealed = damageable.Heal(healthRestore);
-            
+
             if (wasHealed)
                 Destroy(gameObject);
         }
     }
 
-        void Update()
-        {
-            transform.eulerAngles += spinRotationSpeed * Time.deltaTime;
-    } 
+    void Update()
+    {
+        transform.eulerAngles += spinRotationSpeed * Time.deltaTime;
+    }
 }
